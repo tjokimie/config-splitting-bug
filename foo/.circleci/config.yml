@@ -1,0 +1,13 @@
+version: 2.1
+workflows:
+  version: 2
+  foo:
+    jobs:
+      - build_foo
+jobs:
+  build_foo:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run: echo foo
